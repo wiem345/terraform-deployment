@@ -33,3 +33,8 @@ variable "vnet" {
 variable "location" {
   
 }
+
+
+variable "tags" {
+  
+}

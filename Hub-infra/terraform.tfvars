@@ -139,3 +139,11 @@ network_settings = {
     route_table      = ""
   },
 }
+
+
+ tags = {
+    Environment = "Hub"
+    CreatedBy   = "NetworkTeam"
+    CreatedOn   = "15-01-2023"
+
+  }
