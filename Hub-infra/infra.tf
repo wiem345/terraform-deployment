@@ -17,8 +17,6 @@ module "hub-infra" {
 
   source = "github.com/sajipoochira/TerraformModules.git/terraform/Modules/HUB-infra/"
 
-  subscription_id = var.subscription_id
-
   storage_account_name = var.storage_account_name
   prefix = var.prefix
   access_key = var.access_key
