@@ -1,5 +1,24 @@
 subscription_id = "70cf0573-0b63-46e5-b3fc-d998e8f68082"
 
+  storage_account_name = ""
+  prefix = "infra"
+  access_key = ""
+
+
+
+
+  location = "qatarcentral"
+
+  network_resource_group = "rg-network-hub-qc-001"
+
+  vnet = {
+    name          = "vnet-hub-qc-001",
+    address_space = ["172.28.80.0/23", "172.28.82.0/24"]
+  }
+  resource_group_names = ["rg-efw-hub-qc-001", "rg-waf-hub-qc-001", "rg-ifw-hub-qc-001", "rg-mgmt0-hub-qc-001", "rg-mgmt1-hub-qc-001", "rg-key-hub-qc-001", "rg-shared-hub-qc-001", "rg-st-mgmt-hub-qc-001", "rg-monitor-hub-qc-001", "rg-bkp-hub-qc-001", "rg-bastion-hub-qc-001"]
+
+
+
 network_settings = {
   net0 = {
     subnet           = "snet-nva-mgmt-hub-qc-001"
