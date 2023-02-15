@@ -1,3 +1,10 @@
+#Backend Deatils -----------------
+  storage_account_name = ""
+  prefix = "infra"
+  access_key = ""
+###########################################
+
+
 subscription_id = "70cf0573-0b63-46e5-b3fc-d998e8f68082"
 law_name        = "log-sec-ss-hub-qc-001"
 law_subnetname  = "snet-hub-log-pvl-qc-001"

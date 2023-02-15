@@ -13,6 +13,18 @@ provider "azurerm" {
   subscription_id = var.subscription_id
 }
 
+terraform {
+  backend "azurerm" {
+    storage_account_name = var.storage_account_name
+    container_name       = "tfstate"
+    key                  = "${var.prefix}.hub.terraform.tfstate"
+
+    # rather than defining this inline, the Access Key can also be sourced
+    # from an Environment Variable - more information is available below.
+    access_key = var.access_key
+  }
+}
+
 module "hub-infra" {
 
   source = "github.com/sajipoochira/TerraformModules.git/terraform/Modules/HUB-infra/"

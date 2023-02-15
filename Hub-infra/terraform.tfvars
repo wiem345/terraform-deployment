@@ -1,11 +1,10 @@
-subscription_id = ""
-
+#Backend Deatils -----------------
   storage_account_name = ""
   prefix = "infra"
   access_key = ""
+###########################################
 
-
-
+subscription_id = ""
 
   location = "qatarcentral"
 
