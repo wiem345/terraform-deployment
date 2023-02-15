@@ -36,14 +36,3 @@ variable "vnet_rg_name" {
   
 }
 
-variable "storage_account_name" {
-  
-}
-
-variable "prefix" {
-  
-}
-
-variable "access_key" {
-  
-}
