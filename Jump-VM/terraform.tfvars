@@ -1,9 +1,3 @@
-#Backend Deatils -----------------
-  storage_account_name = ""
-  prefix = "infra"
-  access_key = ""
-###########################################
-
 
 
 #Subscription ID

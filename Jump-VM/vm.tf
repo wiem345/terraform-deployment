@@ -15,23 +15,29 @@ provider "azurerm" {
 
 terraform {
   backend "azurerm" {
-    storage_account_name = var.storage_account_name
+    storage_account_name = ""
     container_name       = "tfstate"
-    key                  = "${var.prefix}.hub.terraform.tfstate"
+    key                  = "jump.hub.terraform.tfstate"
 
     # rather than defining this inline, the Access Key can also be sourced
     # from an Environment Variable - more information is available below.
-    access_key = var.access_key
+    access_key = ""
   }
 }
 
 module "reverse-routes" {
   source = "github.com/sajipoochira/TerraformModules.git/terraform/Modules/Jump-VM"
 
-  subscription_id        = ""
-  next_hop_in_ip_address = var.next_hop_in_ip_address
-  routes                 = var.routes
-  route_table            = var.route_table
-  resource_group_name    = var.resource_group_name
+ subscription_id = ""
+
+resource_group_name = var.resource_group_name
+vnet_name           = var.vnet_name
+subnetname          = var.subnetname
+vnet_rg_name        = var.vnet_rg_name
+
+virtual_machine = var.virtual_machine
+os_image = var.os_image
+
+tags = var.tags
 
 }
