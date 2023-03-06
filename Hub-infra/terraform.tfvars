@@ -1,10 +1,10 @@
 #Backend Deatils -----------------
-  storage_account_name = ""
-  prefix = "infra"
-  access_key = ""
+  storage_account_name = "stcratfstatebakend"
+  #prefix = "infra"
+  access_key = "m8LmjyY6gaHWm7ImQfYvXBlV6Syqfh/oRMOZWfhWGgdLbiwIxtLPElDa+ICfXvpYfuso1r0Eq9NZ+ASttG1Kvw=="
 ###########################################
 
-subscription_id = ""
+subscription_id = "bc09682f-aa21-4023-a709-ae1a5ed024db"
 
   location = "qatarcentral"
 
@@ -14,12 +14,13 @@ subscription_id = ""
     name          = "vnet-hub-qc-001",
     address_space = ["172.28.80.0/23", "172.28.82.0/24"]
   }
-  resource_group_names = ["rg-efw-hub-qc-001", "rg-waf-hub-qc-001", "rg-ifw-hub-qc-001", "rg-mgmt0-hub-qc-001", "rg-mgmt1-hub-qc-001", "rg-key-hub-qc-001", "rg-shared-hub-qc-001", "rg-st-mgmt-hub-qc-001", "rg-monitor-hub-qc-001", "rg-bkp-hub-qc-001", "rg-bastion-hub-qc-001"]
+ resource_group_names = ["rg-efw-hub-qc-001", "rg-waf-hub-qc-001", "rg-ifw-hub-qc-001", "rg-mgmt0-hub-qc-001", "rg-mgmt1-hub-qc-001", "rg-key-hub-qc-001", "rg-shared-hub-qc-001", "rg-st-mgmt-hub-qc-001", "rg-monitor-hub-qc-001", "rg-bkp-hub-qc-001", "rg-bastion-hub-qc-001","rg-sec-hub-qc-001","rg-mgmt2-hub-qc-001"]
 
 
 
 network_settings = {
   net0 = {
+    resource_group = "rg-efw-hub-qc-001"
     subnet           = "snet-nva-mgmt-hub-qc-001"
     address_prefixes = ["172.28.80.0/27"]
     nsg              = "nsg-nva-mgmt-hub-qc-001"
@@ -27,6 +28,7 @@ network_settings = {
   },
 
   net1 = {
+    resource_group   = "rg-efw-hub-qc-001"
     subnet           = "snet-efw-untrust-hub-qc-001"
     address_prefixes = ["172.28.80.32/28"]
     nsg              = "nsg-efw-untrust-hub-qc-001"
@@ -34,6 +36,7 @@ network_settings = {
   },
 
   net2 = {
+    resource_group   = "rg-efw-hub-qc-001"
     subnet           = "snet-efw-trust-hub-qc-001"
     address_prefixes = ["172.28.80.48/28"]
     nsg              = "nsg-efw-trust-hub-qc-001"
@@ -41,6 +44,7 @@ network_settings = {
   },
 
   net3 = {
+    resource_group   = "rg-efw-hub-qc-001"
     subnet           = "snet-efw-ha-hub-qc-001"
     address_prefixes = ["172.28.80.64/29"]
     nsg              = "nsg-efw-ha-hub-qc-001"
@@ -48,6 +52,8 @@ network_settings = {
   },
 
   net4 = {
+    
+    resource_group   = "rg-waf-hub-qc-001"
     subnet           = "snet-waf-untrust-hub-qc-001"
     address_prefixes = ["172.28.81.0/24"]
     nsg              = "nsg-waf-untrust-hub-qc-001"
@@ -55,6 +61,7 @@ network_settings = {
   },
 
   net5 = {
+    resource_group   = "rg-waf-hub-qc-001"
     subnet           = "snet-waf-trust-hub-qc-001"
     address_prefixes = ["172.28.80.80/28"]
     nsg              = "nsg-waf-trust-hub-qc-001"
@@ -62,6 +69,7 @@ network_settings = {
   },
 
   net6 = {
+    resource_group   =  "rg-ifw-hub-qc-001"
     subnet           = "snet-ifw-untrust-hub-qc-001"
     address_prefixes = ["172.28.80.96/28"]
     nsg              = "nsg-ifw-untrust-hub-qc-001"
@@ -69,6 +77,7 @@ network_settings = {
   },
 
   net7 = {
+    resource_group   =  "rg-ifw-hub-qc-001"
     subnet           = "snet-ifw-trust-hub-qc-001"
     address_prefixes = ["172.28.80.112/28"]
     nsg              = "nsg-ifw-trust-hub-qc-001"
@@ -76,6 +85,7 @@ network_settings = {
   },
 
   net8 = {
+    resource_group   =  "rg-ifw-hub-qc-001"
     subnet           = "snet-ifw-ha-hub-qc-001"
     address_prefixes = ["172.28.80.72/29"]
     nsg              = "nsg-ifw-ha-hub-qc-001"
@@ -83,6 +93,7 @@ network_settings = {
   },
 
   net9 = {
+    resource_group   = "rg-mgmt0-hub-qc-001"
     subnet           = "snet-mgmt-t0-hub-qc-001"
     address_prefixes = ["172.28.80.128/28"]
     nsg              = "nsg-mgmt-t0-hub-qc-001"
@@ -90,6 +101,7 @@ network_settings = {
   },
 
   net10 = {
+    resource_group   = "rg-mgmt0-hub-qc-001"
     subnet           = "snet-mgmt-t0-hub-qc-002"
     address_prefixes = ["172.28.80.144/28"]
     nsg              = "nsg-mgmt-t0-hub-qc-002"
@@ -97,52 +109,62 @@ network_settings = {
   },
 
   net11 = {
+    resource_group   = "rg-mgmt1-hub-qc-001"
     subnet           = "snet-mgmt-t1-hub-qc-001"
     address_prefixes = ["172.28.80.160/28"]
     nsg              = "nsg-mgmt-t1-hub-qc-001"
     route_table      = "rt-mgmt-t1-hub-qc-001"
   },
-
   net12 = {
+    resource_group   = "rg-mgmt2-hub-qc-001"
+    subnet           = "snet-mgmt-t2-hub-qc-001"
+    address_prefixes = ["172.28.82.128/28"]
+    nsg              = "nsg-mgmt-t2-hub-qc-001"
+    route_table      = "rt-mgmt-t2-hub-qc-001"
+  },
+  net13 = {
+    resource_group   = "rg-key-hub-qc-001"
     subnet           = "snet-kv-hub-qc-001"
     address_prefixes = ["172.28.80.176/29"]
     nsg              = "nsg-kv-hub-qc-001"
     route_table      = "rt-kv-hub-qc-001"
   },
-
-  net13 = {
+  net14 = {
+    resource_group   = "rg-shared-hub-qc-001"
     subnet           = "snet-shared-hub-qc-001"
     address_prefixes = ["172.28.80.192/26"]
     nsg              = "nsg-shared-hub-qc-001"
     route_table      = "rt-shared-hub-qc-001"
   },
 
-  net14 = {
+  net15 = {
+    resource_group   = "rg-st-mgmt-hub-qc-001"
     subnet           = "snet-st-mgmt-hub-qc-001"
     address_prefixes = ["172.28.82.0/28"]
     nsg              = "nsg-st-mgmt-hub-qc-001"
     route_table      = "rt-st-mgmt-hub-qc-001"
   },
 
-  net15 = {
+  net16 = {
+    resource_group   = "rg-monitor-hub-qc-001"
     subnet           = "snet-log-pvl-hub-qc-001"
     address_prefixes = ["172.28.82.32/27"]
     nsg              = "nsg-log-pvl-hub-qc-001"
     route_table      = "rt-log-pvl-hub-qc-001"
   },
 
-  net16 = {
+  net17 = {
+    resource_group   = "rg-bastion-hub-qc-001"
     subnet           = "AzureBastionSubnet"
     address_prefixes = ["172.28.82.64/26"]
     nsg              = ""
     route_table      = ""
   },
 }
-
-
- tags = {
-    Environment = "Hub"
-    CreatedBy   = "NetworkTeam"
-    CreatedOn   = "15-01-2023"
-
-  }
+tags = {
+  Environment = "Hub"
+  CreatedBy   = "MannaiTeam"
+  CreatedOn   = "26-01-2023"
+  Owner       = ""
+  
+}

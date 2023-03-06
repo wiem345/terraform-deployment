@@ -9,9 +9,9 @@ terraform {
 
 terraform {
   backend "azurerm" {
-    storage_account_name = var.storage_account_name
+    storage_account_name = "stcratfstatebkend"
     container_name       = "tfstate"
-    key                  = "${var.prefix}.hub.terraform.tfstate"
+    key                  = "externalroutes.hub.terraform.tfstate"
 
     # rather than defining this inline, the Access Key can also be sourced
     # from an Environment Variable - more information is available below.

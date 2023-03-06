@@ -16,6 +16,7 @@ variable "virtual_machine" {
     vm_size  = string
     username = string
     password = string
+    subnet  = string
   }))
 
 }

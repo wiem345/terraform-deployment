@@ -1,12 +1,12 @@
 #Backend Deatils -----------------
-  storage_account_name = ""
+  storage_account_name = "stcratfstatebkend"
   prefix = "infra"
-  access_key = ""
+  access_key = "k/hDNA2Hv4l9f7QnE5Spcby1888WYWDMkIfSeCLbh0CDpda38ZlDvtoLXaER3zpyeYq4iSD0fwGz+AStlEPjlA=="
 ###########################################
 
 
 #Subscription ID
-subscription_id = "70cf0573-0b63-46e5-b3fc-d998e8f68082"
+subscription_id = "78b75b7d-1115-4589-9d4f-f762481d8a3f"
 
 route_table = [    "rt-nva-mgmt-hub-qc-001",    "rt-mgmt-t0-hub-qc-001",    "rt-mgmt-t0-hub-qc-002",    "rt-mgmt-t1-hub-qc-001",    "rt-kv-hub-qc-001",    "rt-shared-hub-qc-001",    "rt-st-mgmt-hub-qc-001",    "rt-log-pvl-hub-qc-001"]
 

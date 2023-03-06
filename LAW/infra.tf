@@ -16,13 +16,13 @@ provider "azurerm" {
 
 terraform {
   backend "azurerm" {
-    storage_account_name = var.storage_account_name
+    storage_account_name = "stcratfstatebakend"
     container_name       = "tfstate"
-    key                  = "${var.prefix}.hub.terraform.tfstate"
+    key                  = "law.hub.terraform.tfstate"
 
     # rather than defining this inline, the Access Key can also be sourced
     # from an Environment Variable - more information is available below.
-    access_key = var.access_key
+    access_key = "m8LmjyY6gaHWm7ImQfYvXBlV6Syqfh/oRMOZWfhWGgdLbiwIxtLPElDa+ICfXvpYfuso1r0Eq9NZ+ASttG1Kvw=="
   }
 }
 
@@ -38,9 +38,9 @@ locals {
 
 
 module "law" {
-  source = "github.com/sajipoochira/TerraformModules.git/terraform/Modules/LAW/"
+  source = "../.data/Modules/files/Modules/LAW/"
 
-  subscription_id = var.subscription_id
+  subscription_id = "bc09682f-aa21-4023-a709-ae1a5ed024db"
 
   tags = var.tags
 

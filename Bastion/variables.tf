@@ -6,8 +6,6 @@ variable "subscription_id" {
 variable "resource_group_name" {
   
 }
-
-
 variable "vnet_name" {
   
 }
@@ -26,11 +24,9 @@ variable "bastion_name" {
 variable "storage_account_name" {
   
 }
-
-variable "prefix" {
+variable "vnet_rg_name" {
   
 }
-
 variable "access_key" {
   
 }
